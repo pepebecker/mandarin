@@ -1,0 +1,54 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 2em auto;
+	max-width: calc(100% - 2em);
+	width: 600px;
+	font-family: sans-serif;
+}
+
+.input {
+	border: 1px solid #DDD;
+	box-sizing: border-box;
+	border-radius: 3px;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.inputField {
+	width: 100%;
+	padding: .5em;
+	border: none;
+	font-size: 1em;
+}
+
+.btn {
+	height: 100%;
+	padding: .5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: lightgray;
+	cursor: pointer;
+	flex-grow: 1;
+}
+
+.btn.active {
+	background: skyblue;
+}
+
+.output {
+	margin-top: 1em;
+	width: 100%;
+	padding: .5em;
+	box-sizing: border-box;
+}
+
+.placeholder {
+	color: gray;
+	font-weight: lighter;
+}

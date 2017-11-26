@@ -1,0 +1,24 @@
+{
+  "name": "mandarin",
+  "version": "1.0.0",
+  "description": "Convert from Chinese to Pinyin and Zhuyin",
+  "homepage": "https://github.com/pepebecker/mandarin#readme",
+  "bugs": {
+    "url": "https://github.com/pepebecker/mandarin/issues"
+  },
+  "license": "MIT",
+  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepebecker/mandarin.git"
+  },
+  "scripts": {
+    "build": "browserify index.js -o bundle.js",
+    "watch": "watchify index.js -o bundle.js"
+  },
+  "dependencies": {
+    "browserify": "^14.5.0",
+    "watchify": "^3.9.0"
+  }
+}
