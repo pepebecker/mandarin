@@ -18,7 +18,10 @@
     "watch": "watchify index.js -o bundle.js"
   },
   "dependencies": {
-    "browserify": "^14.5.0",
-    "watchify": "^3.9.0"
+    "pinyin-utils": "^1.0.8"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.0",
+    "watchify": "^3.10.0"
   }
 }

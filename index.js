@@ -1,4 +1,5 @@
 const cjst = require('./lib/cjst.js').cjst
+const utils = require('pinyin-utils')
 
 const inputField = document.querySelector('.inputField')
 const pinyinBtn = document.querySelector('.btn.pinyin')
@@ -8,21 +9,41 @@ const output = document.querySelector('.output')
 const convert = () => {
 	const text = inputField.value
 	if (text.length > 0) {
-		if (cjst.hasChineseCharacters(text)) {
-			if (pinyinBtn.classList.contains('active')) {
-				output.innerText = cjst.chineseToPinyin(text).join(' ')
-			}
-			if (zhuyinBtn.classList.contains('active')) {
+		if (pinyinBtn.classList.contains('active')) {
+			fetch('https://pinyin-rest.pepebecker.com/pinyin/' + encodeURIComponent(text))
+			.then(response => response.json())
+			.then(result => {
+				if (result.text) {
+					output.innerText = result.text
+				}
+			})
+			.catch(err => {
+				console.error(err)
+			})
+		}
+		if (zhuyinBtn.classList.contains('active')) {
+			if (cjst.hasChineseCharacters(text)) {
 				output.innerText = cjst.chineseToZhuyin(text)
 				.map(zhuyin => zhuyin.join('')).join(' ')
+			} else {
+				fetch('https://pinyin-rest.pepebecker.com/pinyin/' + encodeURIComponent(text) + '?split=true')
+				.then(response => response.json())
+				.then(result => {
+					if (result.data) {
+						result = result.data.map(utils.numberToMark).join(' ')
+						output.innerText = cjst.pinyinToZhuyin(result)
+						.map(zhuyin => zhuyin.join('')).join(' ')
+					}
+				})
+				.catch(err => {
+					console.error(err)
+				})
 			}
-		} else {
-			output.innerText = ''
 		}
 	} else {
 		if (pinyinBtn.classList.contains('active')) {
 			output.innerHTML = `<span class="placeholder">
-					wǒ de māo xǐ huān hē niú nǎi
+					wǒ de māo xǐhuan hē niúnǎi
 			</span>`
 		}
 		if (zhuyinBtn.classList.contains('active')) {
