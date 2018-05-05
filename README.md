@@ -9,11 +9,14 @@ Tool to transliterate from Mandarin to Pinyin and Zhuyin.
 
 ## Related
 
+- [`hangul`](https://github.com/pepebecker/hangul)
 - [`hepburn`](https://github.com/pepebecker/hepburn)
 - [`pinyin-utils`](https://github.com/pepebecker/pinyin-utils)
 - [`pinyin-split`](https://github.com/pepebecker/pinyin-split)
 - [`find-hanzi`](https://github.com/pepebecker/find-hanzi)
 - [`hsk-words`](https://github.com/pepebecker/hsk-words)
+- [`cedict`](https://github.com/pepebecker/cedict)
+- [`mdbg`](https://github.com/pepebecker/mdbg)
 - [`pinyin-or-hanzi`](https://github.com/pepebecker/pinyin-or-hanzi)
 - [`hanzi-to-pinyin`](https://github.com/pepebecker/hanzi-to-pinyin)
 - [`pinyin-convert`](https://github.com/pepebecker/pinyin-convert)
@@ -22,6 +25,10 @@ Tool to transliterate from Mandarin to Pinyin and Zhuyin.
 - [`pinyin-bot-core`](https://github.com/pepebecker/pinyin-bot-core)
 - [`pinyin-telegram`](https://github.com/pepebecker/pinyin-telegram)
 - [`pinyin-messenger`](https://github.com/pepebecker/pinyin-messenger)
+- [`pinyin-line`](https://github.com/pepebecker/pinyin-line)
+- [`pinyin-chrome`](https://github.com/pepebecker/pinyin-chrome)
+- [`pinyin-cli`](https://github.com/pepebecker/pinyin-cli)
+- [`hanzi-cli`](https://github.com/pepebecker/hanzi-cli)
 
 ## Contributing
 
