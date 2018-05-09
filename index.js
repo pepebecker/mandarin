@@ -122,5 +122,4 @@ hanziBtn.addEventListener('click', () => setMode('hanzi', true))
 
 inputField.addEventListener('input', convert)
 
-inputField.value = 'wǒ de māo xǐhuan hē niúnǎi'
 convert()
