@@ -1,5 +1,4 @@
 const utils = require('pinyin-utils')
-const zhuyin = require('zhuyin')
 
 const inputField = document.querySelector('.inputField')
 const pinyinBtn = document.querySelector('.btn.pinyin')
@@ -21,6 +20,16 @@ const addClickListeners = () => {
 	})
 }
 
+const buildList = items => {
+	return '<ul>' + items.map((item, i) => {
+		if (i === 0) {
+			return '<li class="active">' + item + '</li>'
+		} else {
+			return '<li>' + item + '</li>'
+		}
+	}).join('') + '</ul>'
+}
+
 const convert = async () => {
 	const text = inputField.value
 	if (text.length > 0) {
@@ -34,18 +43,12 @@ const convert = async () => {
 					response = await fetch('https://pinyin-rest.pepebecker.com/zhuyin/' + encodeURIComponent(text))
 				}
 				const result = await response.json()
-				if (typeof result.data === 'string') {
-					output.innerHTML = result.data
-				} else if (Array.isArray(result.data)) {
+				if (Array.isArray(result.data)) {
 					output.innerHTML = result.data.map(item => {
 						if (typeof item === 'string') {
-							return item
+							return ' ' + item + ' '
 						} else {
-							return '<ul>' + item.map((word, i) => {
-								if (i === 0) {
-									return '<li class="active">' + word + '</li>'
-								} else return '<li>' + word + '</li>'
-							}).join('') + '</ul>'
+							return ' ' + (item.length > 1 ? buildList(item) : item) + ' '
 						}
 					}).join('')
 				} else if (result.text) {
@@ -58,17 +61,15 @@ const convert = async () => {
 		}
 		if (hanziBtn.classList.contains('active')) {
 			try {
-				const response = await fetch('https://pinyin-rest.pepebecker.com/hanzi/' + encodeURIComponent(text))
+				const response = await fetch('https://pinyin-rest.pepebecker.com/hanzi/' + encodeURIComponent(text) + '?getIndex=true')
 				const result = await response.json()
 				output.innerHTML = result.map(item => {
-					if (item.length === 1) {
-						return item[0].simplified
+					if (typeof item === 'string') {
+						return item
+					} else if (Array.isArray(item)) {
+						return (item.length > 1 ? buildList(item) : item)
 					} else {
-						return '<ul>' + item.map((cahr, i) => {
-							if (i === 0) {
-								return '<li class="active">' + cahr.simplified + '</li>'
-							} else return '<li>' + cahr.simplified + '</li>'
-						}).join('') + '</ul>'
+						return item.simplified
 					}
 				}).join('')
 				addClickListeners()

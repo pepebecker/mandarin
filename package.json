@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "pinyin-or-hanzi": "^1.2.0",
-    "pinyin-utils": "^1.0.8",
-    "zhuyin": "^1.4.0"
+    "pinyin-utils": "^1.0.8"
   },
   "devDependencies": {
     "browserify": "^16.2.2",
