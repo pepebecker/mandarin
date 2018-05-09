@@ -3,7 +3,7 @@
 [![MIT-licensed](https://img.shields.io/github/license/pepebecker/mandarin.svg)](https://opensource.org/licenses/MIT)
 [![chat on gitter](https://badges.gitter.im/pepebecker.svg)](https://gitter.im/pepebecker)
 
-Tool to transliterate from Mandarin to Pinyin and Zhuyin.
+Tool to transliterate between Mandarin, Pinyin and Zhuyin.
 
 ### [`http://mandarin.pepebecker.com`](http://mandarin.pepebecker.com)
 
@@ -13,6 +13,7 @@ Tool to transliterate from Mandarin to Pinyin and Zhuyin.
 - [`hepburn`](https://github.com/pepebecker/hepburn)
 - [`pinyin-utils`](https://github.com/pepebecker/pinyin-utils)
 - [`pinyin-split`](https://github.com/pepebecker/pinyin-split)
+- [`zhuyin`](https://github.com/pepebecker/zhuyin)
 - [`find-hanzi`](https://github.com/pepebecker/find-hanzi)
 - [`hsk-words`](https://github.com/pepebecker/hsk-words)
 - [`cedict`](https://github.com/pepebecker/cedict)

@@ -15,13 +15,16 @@
   },
   "scripts": {
     "build": "browserify index.js -o bundle.js",
-    "watch": "watchify index.js -o bundle.js"
+    "watch": "watchify -p [ browserify-livereload --host 127.0.0.1 --port 1337 ] index.js -o bundle.js"
   },
   "dependencies": {
-    "pinyin-utils": "^1.0.8"
+    "pinyin-or-hanzi": "^1.2.0",
+    "pinyin-utils": "^1.0.8",
+    "zhuyin": "^1.4.0"
   },
   "devDependencies": {
-    "browserify": "^16.1.0",
-    "watchify": "^3.10.0"
+    "browserify": "^16.2.2",
+    "browserify-livereload": "^1.0.10",
+    "watchify": "^3.11.0"
   }
 }
