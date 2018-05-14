@@ -111,6 +111,9 @@ const setMode = (mode, shouldConvert = false) => {
 		pinyinBtn.classList.remove('active')
 		zhuyinBtn.classList.remove('active')
 		hanziBtn.classList.add('active')
+		inputField.placeholder = 'wo3 de mao1 xi3huan he1 niu2nai3'
+	} else {
+		inputField.placeholder = '我的猫喜欢喝牛奶'
 	}
 	if (shouldConvert) {
 		convert()
