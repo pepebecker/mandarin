@@ -1,4 +1,5 @@
-const utils = require('pinyin-utils')
+const { fromEvent } = require('rxjs')
+const { debounceTime, distinctUntilChanged } = require('rxjs/operators')
 
 const inputField = document.querySelector('.inputField')
 const pinyinBtn = document.querySelector('.btn.pinyin')
@@ -31,6 +32,7 @@ const buildList = items => {
 }
 
 const convert = async () => {
+	console.log('convert')
 	const text = inputField.value
 	if (text.length > 0) {
 		if (pinyinBtn.classList.contains('active') || zhuyinBtn.classList.contains('active')) {
@@ -124,6 +126,9 @@ pinyinBtn.addEventListener('click', () => setMode('pinyin', true))
 zhuyinBtn.addEventListener('click', () => setMode('zhuyin', true))
 hanziBtn.addEventListener('click', () => setMode('hanzi', true))
 
-inputField.addEventListener('input', convert)
+fromEvent(inputField, 'input')
+.pipe(debounceTime(500))
+.pipe(distinctUntilChanged())
+.subscribe(convert)
 
 convert()

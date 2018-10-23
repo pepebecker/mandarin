@@ -18,11 +18,10 @@
     "watch": "watchify -p [ browserify-livereload --host 127.0.0.1 --port 1337 ] index.js -o bundle.js"
   },
   "dependencies": {
-    "pinyin-or-hanzi": "^1.2.0",
-    "pinyin-utils": "^1.0.8"
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
-    "browserify": "^16.2.2",
+    "browserify": "^16.2.3",
     "browserify-livereload": "^1.0.10",
     "watchify": "^3.11.0"
   }
