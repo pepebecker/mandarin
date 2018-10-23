@@ -32,7 +32,6 @@ const buildList = items => {
 }
 
 const convert = async () => {
-	console.log('convert')
 	const text = inputField.value
 	if (text.length > 0) {
 		if (pinyinBtn.classList.contains('active') || zhuyinBtn.classList.contains('active')) {
