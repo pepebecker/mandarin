@@ -6,13 +6,13 @@
   "bugs": {
     "url": "https://github.com/pepebecker/mandarin/issues"
   },
-  "license": "MIT",
-  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pepebecker/mandarin.git"
   },
+  "license": "MIT",
+  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
+  "main": "index.js",
   "scripts": {
     "build": "browserify index.js -o bundle.js",
     "watch": "watchify -p [ browserify-livereload --host 127.0.0.1 --port 1337 ] index.js -o bundle.js"
